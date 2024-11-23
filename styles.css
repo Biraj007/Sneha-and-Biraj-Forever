@@ -1,0 +1,355 @@
+/* General Styles */
+body {
+    font-family: 'Quicksand', sans-serif;  /* Sweet, soft font for body */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #ffcccc, #ffe6e6);
+    color: #333;
+    line-height: 1.6;
+    animation: fadeIn 2s ease-in;
+    box-sizing: border-box;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px;
+    background: #ffe6f0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-top: 80px; /* Adjusted for fixed nav */
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1, header h2 {
+    font-family: 'Dancing Script', cursive;  /* Font for headings */
+    font-size: 2.5rem;
+    color: #e60073;
+}
+
+header p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Navigation Panel */
+nav {
+    background: #ffe6f0;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    animation: slideDown 0.5s ease-out;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #e60073;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #e60073;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Section Styling */
+.section {
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1100px;
+    width: 90%; /* Ensures sections are responsive */
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.section:hover {
+    transform: scale(1);
+}
+
+.section h2 {
+    font-family: 'Dancing Script', cursive;  /* Font for headings */
+    font-size: 2rem;
+    color: #e60073;
+    margin-bottom: 20px;
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1);
+}
+
+/* Love Notes */
+.notes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.note {
+    background: #ffe6f0;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: justify;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.note:hover {
+    background: #ffccdd;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* Hidden Message */
+.hidden {
+    display: none;
+    text-align: justify;
+    margin-top: 20px;
+    background: #ffe6f0;
+    padding: 20px;
+    border-radius: 10px;
+    font-style: italic;
+    color: #e60073;
+}
+
+/* Password Modal */
+.password-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffe6f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+}
+
+.password-modal.active {
+    display: block;
+}
+
+.password-modal h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #e60073;
+    margin-bottom: 10px;
+}
+
+.password-modal input {
+    width: 80%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.password-modal button {
+    background: linear-gradient(to right, #e60073, #ff66a3);
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto;
+}
+
+.password-modal button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #ff66a3, #e60073);
+}
+
+/* Open When Section */
+.open-when {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.open-when.active {
+    display: block;
+}
+
+/* Open When Button Styling */
+.open-when-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between the buttons */
+    margin-top: 20px;
+}
+
+.open-when-btn {
+    background: linear-gradient(to right, #e60073, #ff66a3);
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.open-when-btn:hover {
+    transform: scale(1.1) rotate(5deg);
+    background: linear-gradient(to right, #ff66a3, #e60073);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.open-when-btn:active {
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styling */
+button {
+    background: linear-gradient(to right, #e60073, #ff66a3);
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block; /* Ensuring the button is inline and not stretched */
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #ff66a3, #e60073);
+}
+
+button:active {
+    transform: scale(1);
+    background: linear-gradient(to right, #e60073, #ff66a3);
+}
+
+/* Thank You Section */
+#thank-you {
+    text-align: center;
+    margin-top: 40px; /* Space above the section */
+    padding: 20px;
+    background: #ffe6f0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#thank-you h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #e60073;
+    margin-bottom: 10px;
+}
+
+#thank-you p {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
